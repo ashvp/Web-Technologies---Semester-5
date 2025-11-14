@@ -226,12 +226,6 @@ INPUT C:\Users\ashwi_jkggm6w\AppData\Local\Programs\MiKTeX\tex\latex\grfext\grfe
 INPUT C:\Users\ashwi_jkggm6w\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\ashwi_jkggm6w\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\ashwi_jkggm6w\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT .\main.out
-INPUT .\main.out
-INPUT main.out
-INPUT main.out
-INPUT .\main.out
-INPUT .\main.out
 OUTPUT main.out
 OUTPUT main.pdf
 INPUT .\Lab1\Lab1.tex
@@ -314,9 +308,6 @@ INPUT .\Lab1\7.png
 INPUT .\Lab1\7.png
 INPUT .\Lab1\7.png
 INPUT .\Lab1\7.png
-INPUT .\Lab2\Lab2.tex
-INPUT .\Lab2\Lab2.tex
-INPUT Lab2\Lab2.tex
 INPUT C:\Users\ashwi_jkggm6w\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Users\ashwi_jkggm6w\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
 INPUT C:\Users\ashwi_jkggm6w\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
@@ -325,6 +316,9 @@ INPUT C:\Users\ashwi_jkggm6w\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\c
 INPUT C:\Users\ashwi_jkggm6w\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
 INPUT C:\Users\ashwi_jkggm6w\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy8.tfm
 INPUT C:\Users\ashwi_jkggm6w\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
+INPUT .\Lab2\Lab2.tex
+INPUT .\Lab2\Lab2.tex
+INPUT Lab2\Lab2.tex
 INPUT .\Lab2\index.html
 INPUT .\Lab2\index.html
 INPUT Lab2\index.html
@@ -400,6 +394,13 @@ INPUT .\Lab4\Lab4.tex
 INPUT .\Lab4\Lab4.tex
 INPUT Lab4\Lab4.tex
 INPUT C:\Users\ashwi_jkggm6w\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
+INPUT .\Lab4\1.jpg
+INPUT .\Lab4\1.jpg
+INPUT .\Lab4\1.jpg
+INPUT .\Lab4\1.jpg
+INPUT .\Lab4\1.jpg
+INPUT .\Lab4\1.jpg
+INPUT .\Lab4\1.jpg
 INPUT .\Lab4\Page 1\App.css
 INPUT .\Lab4\Page 1\App.css
 INPUT Lab4\Page 1\App.css
@@ -519,6 +520,9 @@ INPUT Lab6\components\ControlButtons.jsx
 INPUT .\Lab7\Lab7.tex
 INPUT .\Lab7\Lab7.tex
 INPUT Lab7\Lab7.tex
+INPUT C:\Users\ashwi_jkggm6w\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
+INPUT C:\Users\ashwi_jkggm6w\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
+INPUT C:\Users\ashwi_jkggm6w\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
 INPUT .\Lab7\1.png
 INPUT .\Lab7\1.png
 INPUT .\Lab7\1.png

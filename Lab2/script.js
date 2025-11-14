@@ -1,4 +1,4 @@
-const apiKey = '26bf58246520bcf6810ecf28c31c2da7'; 
+const apiKey = '26bf58246520bcf6810ecf28c31c2da7'; // Please use this as an Environment Variable in production, not hardcoded. This is only for Lab purposes. Please do not make me regret this and be in debt to OpenWeatherMap :)
 
 document.getElementById('searchBtn').addEventListener('click', fetchWeather);
 

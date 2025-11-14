@@ -77,15 +77,20 @@ All components are built as functional components, with \texttt{props} used for 
 ]
 
 % Root Node
-\node (app) {App.jsx\\\textit{Root component rendering Navbar and Dashboard}};
+\node (app) {App.jsx\
+\textit{Root component rendering Navbar and Dashboard}};
 
 % Children
-\node (navbar) [below left=of app, xshift=-0.2cm] {NavigationBar.jsx\\\textit{props: none}};
-\node (dashboard) [below right=of app, xshift=0.2cm] {Dashboard.jsx\\\textit{props: \texttt{\{posts\}}}};
+\node (navbar) [below left=of app, xshift=-0.2cm] {NavigationBar.jsx\
+\textit{props: none}};
+\node (dashboard) [below right=of app, xshift=0.2cm] {Dashboard.jsx\
+\textit{props: \texttt{\{posts\}}}};
 
 % Nested under Dashboard
-\node (blogcard) [below=2cm of dashboard] {BlogCard.jsx\\\textit{props: \texttt{\{title, description, onReadMore\}}}};
-\node (readmore) [below=2cm of blogcard] {ReadMore.jsx\\\textit{props: \texttt{\{children\}}}};
+\node (blogcard) [below=2cm of dashboard] {BlogCard.jsx\
+\textit{props: \texttt{\{title, description, onReadMore\}}}};
+\node (readmore) [below=2cm of blogcard] {ReadMore.jsx\
+\textit{props: \texttt{\{children\}}}};
 
 % Arrows
 \draw[-{Latex[length=2mm,width=1.5mm]}, thick] (app) -- node[prop,above left]{renders navbar} (navbar);
@@ -141,3 +146,7 @@ The Navbar and Cards adapt automatically to screen sizes, and component-level re
 \subsection*{Conclusion}
 This lab demonstrates practical usage of React Bootstrap components for building responsive, modular UIs.  
 By combining props, grid layouts, and reusable components, the application achieves scalability, maintainability, and professional front-end design.
+
+\subsection*{GitHub Repository}
+The source code for all the labs can be found at the following GitHub repository:
+\url{https://github.com/ashvp/Web-Technologies---Semester-5}

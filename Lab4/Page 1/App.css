@@ -4,46 +4,37 @@
   padding: 2rem;
   /* text-align: center; */
 }
-
 .card {
   padding: 2em;
 }
-
 .read-the-docs {
   color: #888;
 }
-
 .titleName {
   font-weight: bold;
   word-spacing: 9em;
   text-align: left;
 }
-
 .titlePrice {
   font-weight: bold;
   word-spacing: 2em;
   text-align: right;
 }
-
 .grid {
   display: grid;
   gap: 2em;
 }
-
 .name {
   text-align: left;
 }
-
 .price {
   text-align: right;
 }
-
 .item {
   display: grid;
   grid-template-columns: 200px auto; /* first col for name, second for price */
   margin: 4px 0;
 }
-
 .title {
   font-weight: bold;
   word-spacing: 10em;

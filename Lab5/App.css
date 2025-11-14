@@ -4,7 +4,6 @@
   padding: 2rem;
   text-align: center;
 }
-
 .container {
   display: flex;
   flex-direction: column;
@@ -14,21 +13,17 @@
   background-color: #280303;
   font-family: sans-serif;
 }
-
 .temperature-input {
   margin-bottom: 1rem;
 }
-
 .temperature-input input {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
 .controls {
   margin-bottom: 1rem;
 }
-
 .controls button {
   padding: 0.5rem 1rem;
   margin: 0 0.5rem;
@@ -36,7 +31,6 @@
   border-radius: 4px;
   cursor: pointer;
 }
-
 .fahrenheit-display {
   font-size: 1.2rem;
   font-weight: bold;

@@ -20,7 +20,7 @@ This React application provides an interactive countdown timer interface that al
     \item View the remaining time in real-time.
 \end{itemize}
 
-The app uses React’s \texttt{useState} for managing timer data and \texttt{useEffect} for interval-based countdown logic.  
+The app uses React's \texttt{useState} for managing timer data and \texttt{useEffect} for interval-based countdown logic.  
 Each component is functional, modular, and communicates through props.
 
 
@@ -67,13 +67,18 @@ Each component is functional, modular, and communicates through props.
 ]
 
 %  Parent node 
-\node (app) {App.jsx\\\textit{uses useState/useEffect for timer logic}};
+\node (app) {App.jsx\
+\textit{uses useState/useEffect for timer logic}};
 
 %  Child nodes (fan layout) 
-\node (title) [below left=3cm and 3cm of app] {Title.jsx\\\textit{props: \texttt{\symbol{123}text\symbol{125}}}};
-\node (setter) [below left=6cm and 2cm of app] {TimeSetter.jsx\\\textit{props: \texttt{\symbol{123}hours, minutes, seconds, onTimeChange, disabled\symbol{125}}}};
-\node (controls) [below right=6cm and -3cm of app] {ControlButtons.jsx\\\textit{props: \texttt{\symbol{123}isActive, onStart, onStop, onReset, hasTime\symbol{125}}}};
-\node (display) [below right=3cm and 3cm of app] {TimerDisplay.jsx\\\textit{props: \texttt{\symbol{123}hours, minutes, seconds, isActive, isFinished\symbol{125}}}};
+\node (title) [below left=3cm and 3cm of app] {Title.jsx\
+\textit{props: \texttt{\symbol{123}text\symbol{125}}}};
+\node (setter) [below left=6cm and 2cm of app] {TimeSetter.jsx\
+\textit{props: \texttt{\symbol{123}hours, minutes, seconds, onTimeChange, disabled\symbol{125}}}};
+\node (controls) [below right=6cm and -3cm of app] {ControlButtons.jsx\
+\textit{props: \texttt{\symbol{123}isActive, onStart, onStop, onReset, hasTime\symbol{125}}}};
+\node (display) [below right=3cm and 3cm of app] {TimerDisplay.jsx\
+\textit{props: \texttt{\symbol{123}hours, minutes, seconds, isActive, isFinished\symbol{125}}}};
 
 %  Arrows 
 \draw[arrow] (app) -- node[prop,above left, pos=0.5]{passes title text} (title);
@@ -84,7 +89,6 @@ Each component is functional, modular, and communicates through props.
 \end{tikzpicture}
 \caption{Component Hierarchy — Lab 6: Countdown Timer (Fan-out Structure with Prop Flow)}
 \end{figure}
-
 
 
 
@@ -110,6 +114,7 @@ Each component is functional, modular, and communicates through props.
     \caption{Screenshot 3: Timer Finished}
 \end{figure}
 
+\newpage
 \subsection*{Code Overview}
 
 \subsubsection*{App.css}
@@ -142,3 +147,7 @@ The design supports modular component-based architecture with clear prop communi
 \subsection*{Conclusion}
 This exercise demonstrates effective use of React hooks for managing side effects (intervals) and dynamic state updates.  
 By splitting logic across four functional components, the app achieves a clean, maintainable, and scalable design.
+
+\subsection*{GitHub Repository}
+The source code for all the labs can be found at the following GitHub repository:
+\url{https://github.com/ashvp/Web-Technologies---Semester-5}

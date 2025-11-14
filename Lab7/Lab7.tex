@@ -15,7 +15,7 @@ Build a React application using React Router with the following routes:
 \end{itemize}
 
 The \textbf{Home} page should include a short personal summary and an optional profile picture.  
-Routes \textbf{Education}, \textbf{Skills}, \textbf{Projects}, \textbf{Experience}, and \textbf{Achievements} reflect the student’s CV.  
+Routes \textbf{Education}, \textbf{Skills}, \textbf{Projects}, \textbf{Experience}, and \textbf{Achievements} reflect the student's CV.  
 The \textbf{Thermostat} route integrates the Lab 5 temperature-converter logic, and the \textbf{Timer} route integrates the Lab 6 countdown timer logic.
 
 The app must use functional components, \texttt{props}, \texttt{useState}, \texttt{useEffect}, and React Router for navigation.  
@@ -95,7 +95,8 @@ The app demonstrates:
 
 \begin{figure}[H]
 \centering
-\hspace*{-3cm}
+
+\hspace*{-2.5cm}
 \begin{tikzpicture}[
     node distance=2cm and 2cm,
     every node/.style={
@@ -111,20 +112,45 @@ The app demonstrates:
     prop/.style={font=\scriptsize, midway, fill=white, inner sep=1pt}
 ]
 
-%  Parent node 
-\node (app) {App.jsx\\\textit{Top-level Router using React Router DOM}\\routes to 8 pages};
+% Parent node 
+\node (app) {App.jsx\\[0.2cm]
+\textit{Top-level Router using React Router DOM}\\[0.1cm]
+routes to 8 pages};
 
-%  Route components (fan layout) 
-\node (home) [below left=2.8cm and 4.2cm of app] {Home.jsx\\\textit{props: none}\\displays profile + summary};
-\node (education) [below left=5.8cm and 4cm of app] {Education.jsx\\\textit{props: none}\\renders academic data};
-\node (skills) [below left=4.5cm and -1cm of app] {Skills.jsx\\\textit{props: none}\\lists technical stack};
-\node (projects) [below right=4.5cm and -1cm of app] {Projects.jsx\\\textit{props: none}\\portfolio component};
-\node (experience) [below right=2.8cm and 4cm of app] {Experience.jsx\\\textit{props: none}\\professional experience};
-\node (achievements) [below right=5.8cm and 4cm of app] {Achievements.jsx\\\textit{props: none}\\certifications and awards};
-\node (thermostat) [below right=7.5cm and -1cm of app] {Thermostat.jsx\\\textit{props: none}\\uses components from Lab 5};
-\node (timer) [below left=7.5cm and -1cm of app] {Timer.jsx\\\textit{props: none}\\uses components from Lab 6};
+% Route components (fan layout) 
+\node (home) [below left=2.8cm and 4.2cm of app] {Home.jsx\\[0.1cm]
+\textit{props: none}\\[0.1cm]
+displays profile + summary};
 
-%  Arrows from App to each route 
+\node (education) [below left=5.8cm and 4cm of app] {Education.jsx\\[0.1cm]
+\textit{props: none}\\[0.1cm]
+renders academic data};
+
+\node (skills) [below left=4.5cm and -1cm of app] {Skills.jsx\\[0.1cm]
+\textit{props: none}\\[0.1cm]
+lists technical stack};
+
+\node (projects) [below right=4.5cm and -1cm of app] {Projects.jsx\\[0.1cm]
+\textit{props: none}\\[0.1cm]
+portfolio component};
+
+\node (experience) [below right=2.8cm and 4cm of app] {Experience.jsx\\[0.1cm]
+\textit{props: none}\\[0.1cm]
+professional experience};
+
+\node (achievements) [below right=5.8cm and 4cm of app] {Achievements.jsx\\[0.1cm]
+\textit{props: none}\\[0.1cm]
+certifications and awards};
+
+\node (thermostat) [below right=7.5cm and -1cm of app] {Thermostat.jsx\\[0.1cm]
+\textit{props: none}\\[0.1cm]
+uses components from Lab 5};
+
+\node (timer) [below left=7.5cm and -1cm of app] {Timer.jsx\\[0.1cm]
+\textit{props: none}\\[0.1cm]
+uses components from Lab 6};
+
+% Arrows from App to each route 
 \draw[arrow] (app) -- (home);
 \draw[arrow] (app) -- (education);
 \draw[arrow] (app) -- (skills);
@@ -134,22 +160,39 @@ The app demonstrates:
 \draw[arrow] (app) -- (thermostat);
 \draw[arrow] (app) -- (timer);
 
-%  Thermostat internal components (Lab 5) 
-\node (tempdisplay) [below=1.8cm of thermostat,xshift=-0.9cm] {TemperatureDisplay.jsx\\\textit{props: \texttt{\symbol{123}temperature, onChange\symbol{125}}}};
-\node (tempcontrols) [below=1.8cm of thermostat,xshift=4.3cm] {TemperatureControls.jsx\\\textit{props: \texttt{\symbol{123}increase, decrease\symbol{125}}}};
-\node (tempinf) [below=3.3cm of thermostat,xshift=-0.9cm] {TemperatureInF.jsx\\\textit{props: \texttt{\symbol{123}celcius\symbol{125}}}};
-\node (tempinc) [below=3.3cm of thermostat,xshift=4.3cm] {TemperatureInC.jsx\\\textit{props: none}};
+% Thermostat internal components (Lab 5) 
+\node (tempdisplay) [below=1.8cm of thermostat,xshift=-0.9cm] {TemperatureDisplay.jsx\\[0.1cm]
+\textit{props: \{temperature, onChange\}}};
+
+\node (tempcontrols) [below=1.8cm of thermostat,xshift=4.3cm] {TemperatureControls.jsx\\[0.1cm]
+\textit{props: \{increase, decrease\}}};
+
+\node (tempinf) [below=3.3cm of thermostat,xshift=-0.9cm] {TemperatureInF.jsx\\[0.1cm]
+\textit{props: \{celcius\}}};
+
+\node (tempinc) [below=3.3cm of thermostat,xshift=4.3cm] {TemperatureInC.jsx\\[0.1cm]
+\textit{props: none}};
 
 \draw[arrow] (thermostat) -- (tempdisplay);
 \draw[arrow] (thermostat) -- (tempcontrols);
 \draw[arrow] (thermostat) -- (tempinf);
 \draw[arrow] (thermostat) -- (tempinc);
 
-%  Timer internal components (Lab 6) 
-\node (title) [below left=2cm and 1cm of timer] {Title.jsx\\\textit{props: \texttt{\symbol{123}text\symbol{125}}}};
-\node (timesetter) [below left=4cm and 0cm of timer] {TimeSetter.jsx\\\textit{props: \texttt{\symbol{123}hours, minutes, seconds, onTimeChange, disabled\symbol{125}}}};
-\node (ctrlbtns) [below right=2cm and -3cm of timer] {ControlButtons.jsx\\\textit{props: \texttt{\symbol{123}isActive, onStart, onStop, onReset, hasTime\symbol{125}}}};
-\node (timerdisplay) [below right=4cm and -4cm of timer] {TimerDisplay.jsx\\\textit{props: \texttt{\symbol{123}hours, minutes, seconds, isActive, isFinished\symbol{125}}}};
+% Timer internal components (Lab 6) 
+\node (title) [below left=2cm and 1cm of timer] {Title.jsx\\[0.1cm]
+\textit{props: \{text\}}};
+
+\node (timesetter) [below left=4cm and 0cm of timer] {TimeSetter.jsx\\[0.1cm]
+\textit{props: \{hours, minutes, seconds,}\\[0.05cm]
+\textit{onTimeChange, disabled\}}};
+
+\node (ctrlbtns) [below right=2cm and -3cm of timer] {ControlButtons.jsx\\[0.1cm]
+\textit{props: \{isActive, onStart,}\\[0.05cm]
+\textit{onStop, onReset, hasTime\}}};
+
+\node (timerdisplay) [below right=4cm and -4cm of timer] {TimerDisplay.jsx\\[0.1cm]
+\textit{props: \{hours, minutes, seconds,}\\[0.05cm]
+\textit{isActive, isFinished\}}};
 
 \draw[arrow] (timer) -- (title);
 \draw[arrow] (timer) -- (timesetter);
@@ -159,8 +202,6 @@ The app demonstrates:
 \end{tikzpicture}
 \caption{Component Hierarchy — Lab 7: React Router Application (Routes + Nested Thermostat and Timer Components)}
 \end{figure}
-
-
 
 
 \subsection*{Rendered Output (Screenshot)}
@@ -278,3 +319,7 @@ Each route loads a unique page component, and the overall app demonstrates:
 This lab integrates multiple independent React modules into a single navigable application.  
 It reinforces core React concepts such as routing, props, state management, and side-effect handling with \texttt{useEffect}.  
 The project demonstrates scalable, modular front-end design suitable for full-stack deployment.
+
+\subsection*{GitHub Repository}
+The source code for all the labs can be found at the following GitHub repository:
+\url{https://github.com/ashvp/Web-Technologies---Semester-5}

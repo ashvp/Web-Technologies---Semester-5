@@ -8,7 +8,6 @@ body {
     background-color: #f4f7f6;
     color: #333;
 }
-
 header, footer {
     width: 100%;
     background-color: #ffffff;
@@ -17,19 +16,16 @@ header, footer {
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     flex-shrink: 0; /* Prevent shrinking */
 }
-
 header h1 {
     margin: 0;
     font-size: 1.5rem;
     color: #007bff;
 }
-
 footer p {
     margin: 0;
     font-size: 0.9rem;
     color: #666;
 }
-
 main {
     flex-grow: 1;
     display: flex;
@@ -37,7 +33,6 @@ main {
     align-items: center;
     padding: 2rem;
 }
-
 .container {
     width: 100%;
     max-width: 420px;
@@ -47,13 +42,11 @@ main {
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     text-align: center;
 }
-
 .search-bar {
     display: flex;
     gap: 0.5rem;
     margin-bottom: 2rem;
 }
-
 #cityInput {
     flex-grow: 1;
     padding: 0.8rem 1rem;
@@ -62,13 +55,11 @@ main {
     font-size: 1rem;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
-
 #cityInput:focus {
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 0 3px rgba(0,123,255,0.2);
 }
-
 #searchBtn {
     padding: 0.8rem 1.5rem;
     border: none;
@@ -80,40 +71,33 @@ main {
     font-weight: 500;
     transition: background-color 0.2s;
 }
-
 #searchBtn:hover {
     background-color: #0056b3;
 }
-
 #weatherCard {
     margin-top: 1.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid #eee;
 }
-
 #weatherCard h2 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
 }
-
 #weatherCard p {
     font-size: 1.1rem;
     margin: 0.4rem 0;
     color: #555;
 }
-
 .weather-icon {
     width: 120px;
     height: 120px;
     margin: 0.5rem auto;
 }
-
 .error {
     color: #dc3545;
     margin-top: 1rem;
     font-weight: 500;
 }
-
 .hidden {
     display: none;
 }

@@ -1,8 +1,6 @@
-// import react from "react";
 import "./App.css";
 import "./components/ListSection.jsx";
 import ListSections from "./components/ListSection.jsx";
-
 function App() {
   const fruits = [
     { name: "Apple", price: 50, inStock: true },
@@ -11,7 +9,6 @@ function App() {
     { name: "Coconut", price: 40, inStock: true },
     { name: "Pineapple", price: 70, inStock: false },
   ];
-
   const vegetables = [
     { name: "Carrot", price: 20, inStock: false },
     { name: "Radish", price: 30, inStock: true },
@@ -19,7 +16,6 @@ function App() {
     { name: "Celery", price: 15, inStock: false },
     { name: "Potato", price: 20, inStock: true },
   ];
-
   return (
     <>
       <div className="searchBar">
@@ -47,5 +43,4 @@ function App() {
     </>
   );
 }
-
 export default App;

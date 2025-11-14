@@ -1,5 +1,3 @@
-// import react from "react";
-
 function ListSections({ title, items }) {
   return (
     <section>
@@ -20,5 +18,4 @@ function ListSections({ title, items }) {
     </section>
   );
 }
-
 export default ListSections;

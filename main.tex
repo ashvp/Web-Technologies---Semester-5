@@ -3,13 +3,14 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{titlesec}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{geometry}
 \geometry{margin=1in}
 \usepackage{tikz}
 \usetikzlibrary{positioning, arrows.meta}
 \usepackage{float}
 \usepackage{caption}
+
 
 \usepackage[utf8]{inputenc}
 
@@ -60,12 +61,17 @@
   showstringspaces=false
 }
 
-
+\lstset{
+    literate={☁}{Cloud}1 { {}0 {🌡}{Temp}1 {💧}{Drop}1 {💨}{Wind}1 {°}{deg}1
+}
 
 
 \title{\textbf{Web Technologies Laboratory Record}}
 \author{Ashwin V \\ B.Tech AI and Data Science \\ Shiv Nadar University}
 \date{}
+% \usepackage{xcolor}
+% \pagecolor{black}
+% \color{white}
 
 \begin{document}
 
