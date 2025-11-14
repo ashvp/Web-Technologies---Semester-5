@@ -1,8 +1,3 @@
-Here’s a cleaner, more _human_, slightly more relaxed version — still polished but not corporate-level formal.
-I’ve kept the structure intact while toning down the seriousness, making it more student-friendly and authentic.
-
----
-
 # **Web Technologies – Semester 5 Lab Exercises**
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/ashvp/Web-Technologies---Semester-5)
