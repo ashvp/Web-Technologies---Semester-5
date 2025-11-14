@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="registration-wrapper">
+    <header>
+      <h1>Join Our Event</h1>
+    </header>
+    <form id="event-signup-form" novalidate>
+      <div class="input-field-group">
+        <label for="fullName">Your Full Name*</label>
+        <input type="text" id="fullName" required>
+        <span class="validation-error"></span>
+      </div>
+
+      <div class="input-field-group">
+        <label for="emailAddress">Email Address*</label>
+        <input type="email" id="emailAddress" required>
+        <span class="validation-error"></span>
+      </div>
+
+      <div class="input-field-group">
+        <label for="phoneNumber">Phone Number*</label>
+        <input type="text" id="phoneNumber" required>
+        <span class="validation-error"></span>
+      </div>
+
+      <div class="input-field-group">
+        <label for="userAge">Your Age*</label>
+        <input type="number" id="userAge" required>
+        <span class="validation-error"></span>
+      </div>
+
+      <button type="submit" id="submit-button" disabled>Sign Up</button>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

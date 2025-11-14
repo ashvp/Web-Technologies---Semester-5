@@ -1,0 +1,132 @@
+\section*{Lab Exercise 5: Temperature Converter UI using React (Functional Components + useState)}
+
+\subsection*{Question}
+Design a UI for building a temperature web application that can convert Celsius to Fahrenheit and has the option to increase or decrease the temperature.
+
+\begin{itemize}
+    \item Identify the main React components in this design.
+    \item For each component, list the props that would be required.
+    \item Draw a component hierarchy diagram.
+    \item Ensure your design uses only functional components, props, and the \texttt{useState} hook.
+\end{itemize}
+
+
+
+\subsection*{Design Description}
+This React application demonstrates the use of functional components, props, and \texttt{useState} to handle temperature data.  
+The UI includes:
+\begin{itemize}
+    \item A main temperature display showing the current value in Celsius and Fahrenheit.
+    \item Buttons to increase or decrease the temperature dynamically.
+    \item Real-time conversion between Celsius and Fahrenheit.
+\end{itemize}
+
+\subsection*{Main Components and Props}
+
+\begin{itemize}
+    \item \textbf{App.jsx} - Root component controlling overall logic and maintaining temperature state via \texttt{useState}.
+    \begin{itemize}
+        \item \textit{State:} \texttt{temperatureC} (stores current temperature in Celsius)
+    \end{itemize}
+    
+    \item \textbf{TemperatureDisplay.jsx} - Displays the current temperature in both Celsius and Fahrenheit.
+    \begin{itemize}
+        \item \textit{Props:} \texttt{temperatureC}, \texttt{temperatureF}
+    \end{itemize}
+    
+    \item \textbf{TemperatureInC.jsx} - Renders the temperature value in Celsius.
+    \begin{itemize}
+        \item \textit{Props:} \texttt{value}
+    \end{itemize}
+
+    \item \textbf{TemperatureInF.jsx} - Converts and renders the Fahrenheit value.
+    \begin{itemize}
+        \item \textit{Props:} \texttt{value}
+    \end{itemize}
+
+    \item \textbf{TemperatureControls.jsx} - Provides UI buttons to increment or decrement the temperature.
+    \begin{itemize}
+        \item \textit{Props:} \texttt{onIncrease}, \texttt{onDecrease}
+    \end{itemize}
+\end{itemize}
+
+
+
+\subsection*{Component Hierarchy Diagram}
+\begin{figure}[H]
+\centering
+\hspace*{-2.55cm} % <-- shift entire diagram left
+\begin{tikzpicture}[
+    scale=0.4,
+    node distance=1.2cm and 2.2cm,
+    every node/.style={
+        draw,
+        rounded corners,
+        align=center,
+        font=\footnotesize,
+        fill=gray!10,
+        minimum width=3.8cm,
+        minimum height=0.9cm
+    },
+    arrow/.style={-{Latex[length=2.5mm,width=1.5mm]}, thick},
+    prop/.style={font=\scriptsize, midway, fill=white, inner sep=1pt}
+]
+
+\node (app) {App.jsx\\\textit{uses useState for temperature}};
+\node (display) [below left=of app, xshift=-0.5cm] {TemperatureDisplay.jsx\\\textit{props: \texttt{\{temperature, onChange\}}}};
+\node (controls) [below right=of app, xshift=0.5cm] {TemperatureControls.jsx\\\textit{props: \texttt{\{increase, decrease\}}}};
+\node (inf) [below=2.5cm of app] {TemperatureInF.jsx\\\textit{props: \texttt{\{celcius\}}}};
+\node (inc) [below=of inf] {TemperatureInC.jsx\\\textit{no props}};
+
+\draw[arrow] (app) -- node[prop,left]{passes temp + setter} (display);
+\draw[arrow] (app) -- node[prop,right]{passes inc/dec handlers} (controls);
+\draw[arrow] (app) -- node[prop,right]{passes celcius value} (inf);
+\draw[arrow] (inf) -- node[prop,right]{renders Celsius block} (inc);
+
+\end{tikzpicture}
+\caption{Component Hierarchy — Lab 5: Temperature Converter (Props and Data Flow)}
+\end{figure}
+
+
+
+\subsection*{Rendered Output (Screenshot)}
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab5/1.jpg}
+    \caption{Screenshot 1: Thermostat UI with Temperature Controls}
+\end{figure}
+
+
+\subsection*{Code Overview}
+
+\subsubsection*{App.css}
+\lstinputlisting[style=codestyle, language=CSS]{Lab5/App.css}
+
+\subsubsection*{App.jsx}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab5/App.jsx}
+
+\subsubsection*{TemperatureDisplay.jsx}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab5/components/TemperatureDisplay.jsx}
+
+\subsubsection*{TemperatureControls.jsx}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab5/components/TemperatureControls.jsx}
+
+\subsubsection*{TemperatureInC.jsx}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab5/components/TemperatureInC.jsx}
+
+\subsubsection*{TemperatureInF.jsx}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab5/components/TemperatureInF.jsx}
+
+
+
+\subsection*{Result}
+The temperature converter application was successfully built using React functional components, props, and the \texttt{useState} hook.  
+Users can increase or decrease the temperature dynamically, with real-time conversion between Celsius and Fahrenheit.  
+The component design follows a clean hierarchy, enabling scalability and reusability.
+
+
+
+\subsection*{Conclusion}
+This lab demonstrates effective use of \texttt{useState} for dynamic UI updates and prop-based communication between parent and child components.  
+It reinforces understanding of unidirectional data flow and modular UI design in React.

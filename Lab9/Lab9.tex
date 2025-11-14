@@ -1,0 +1,115 @@
+\section*{Lab Exercise 9: Basic Blog Server using Node.js HTTP Module}
+
+\subsection*{Question}
+Build a simple Node.js blog server using only the built-in \texttt{http} module by creating a \texttt{server.js} file. Implement basic routing as follows:
+
+\begin{itemize}
+    \item A \textbf{GET endpoint} at \texttt{/} that returns an HTML home page with inline navigation links to “Home” (\texttt{/}) and “Posts” (\texttt{/posts}).
+    \item A \textbf{GET endpoint} at \texttt{/posts} that dynamically generates an HTML page displaying 3-4 blog posts (titles and descriptions) from a hardcoded array using a loop.
+    \item A \textbf{404 handler} for unmatched routes, returning a styled HTML error message.
+\end{itemize}
+
+
+
+\subsection*{Design Description}
+This lab demonstrates the creation of a minimal web server in Node.js without using external frameworks like Express.  
+The server handles routing manually using conditional logic on the request URL, serving different pages based on the endpoint.
+
+The implementation includes:
+\begin{itemize}
+    \item \textbf{Home Page:} Static HTML file with navigation links to other routes.
+    \item \textbf{Posts Page:} Dynamically generated HTML content using a hardcoded JavaScript array of post objects.
+    \item \textbf{Error Handling:} Custom 404 response for undefined routes.
+\end{itemize}
+
+
+
+\subsection*{Main Files and Their Roles}
+
+\begin{itemize}
+    \item \textbf{server.js} - Entry point of the Node application. Creates an HTTP server, handles routing logic, and serves content.
+    \item \textbf{components/homePage.html} - Static home page served at the root endpoint (\texttt{/}).
+    \item \textbf{components/blog.html} - Template HTML structure used to render blog posts dynamically.
+    \item \textbf{components/error.html} - HTML error page returned for invalid routes.
+    \item \textbf{data/BlogPosts.js} - Exports a hardcoded array of blog post objects, each containing \texttt{title} and \texttt{description}.
+    \item \textbf{routes/home.js} - Handles logic for rendering and returning the home page.
+    \item \textbf{routes/posts.js} - Handles logic for looping through the post data and generating the blog page.
+    \item \textbf{routes/error.js} - Exports a function to handle 404 errors gracefully.
+\end{itemize}
+
+
+
+% \subsection*{Component Hierarchy Diagram}
+% \begin{center}
+% \includegraphics[width=0.85\textwidth]{Lab9/images/hierarchy.png}
+% \end{center}
+
+
+
+\subsection*{Rendered Output (Screenshots)}
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab9/1.png}
+    \caption{Screenshot 1: Home Page}
+\end{figure}
+
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab9/2.png}
+    \caption{Screenshot 2: Posts Page with Dynamic Blog Posts}
+\end{figure}
+
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab9/3.png}
+    \caption{Screenshot 3: Custom 404 Error Page - Invalid Route}
+\end{figure}
+
+\subsection*{Code Overview}
+
+\subsubsection*{server.js}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab9/server.js}
+
+\subsubsection*{routes/home.js}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab9/routes/home.js}
+
+\subsubsection*{routes/posts.js}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab9/routes/posts.js}
+
+\subsubsection*{routes/error.js}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab9/routes/error.js}
+
+\subsubsection*{data/BlogPosts.js}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab9/data/BlogPosts.js}
+
+\subsubsection*{components/homePage.html}
+\lstinputlisting[style=codestyle, language=HTML]
+{Lab9/components/homePage.html}
+
+\subsubsection*{components/blog.html}
+\lstinputlisting[style=codestyle, language=HTML]{Lab9/components/blog.html}
+
+\subsubsection*{components/error.html}
+\lstinputlisting[style=codestyle, language=HTML]{Lab9/components/error.html}
+
+
+
+\subsection*{Result}
+The Node.js HTTP server was successfully implemented with basic routing and dynamic content generation.  
+Navigating to \texttt{http://localhost:3000/} renders the home page, while \texttt{/posts} dynamically displays 3-4 blog posts from the array.  
+Invalid routes correctly return a custom 404 page.
+
+
+
+\subsection*{Conclusion}
+This lab demonstrates how to create a functional web server using only Node.js’ built-in \texttt{http} and \texttt{fs} modules.  
+It showcases:
+\begin{itemize}
+    \item Manual routing without frameworks.
+    \item Dynamic HTML generation using JavaScript loops.
+    \item Modular separation of route handlers and data sources.
+\end{itemize}
+The project lays the foundation for understanding core Node.js web concepts before introducing Express.js in advanced labs.

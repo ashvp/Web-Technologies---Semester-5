@@ -1,0 +1,116 @@
+\section*{Lab Exercise 3: Event Registration Form with Validation using HTML, CSS, and JavaScript}
+
+\subsection*{Question}
+Develop a registration form that validates user input for a community event signup using HTML, CSS, and JavaScript.
+
+\textbf{Requirements:}
+\begin{itemize}
+    \item Define all form fields and validation requirements (e.g., name, email, phone number, age).
+    \item Specify which fields are required and define valid formats (regex for email, digits for phone number, age over 18, etc.).
+    \item Design a user-friendly registration UI that provides real-time feedback for invalid fields.
+    \item Implement the form using HTML, CSS, and JavaScript (with real-time validation).
+    \item Test for invalid inputs and handle edge cases.
+    \item Host and version-control the project on GitHub.
+\end{itemize}
+
+\subsection*{Requirement Analysis}
+The form includes the following input fields:
+\begin{itemize}
+    \item \textbf{Full Name} - Required, must not be empty.
+    \item \textbf{Email Address} - Required, must match regex \verb|/^\S+@\S+\.\S+$/|.
+    \item \textbf{Phone Number} - Required, must contain exactly 10 digits.
+    \item \textbf{Age} - Required, must be a number greater than or equal to 18.
+\end{itemize}
+
+Validation logic ensures:
+\begin{itemize}
+    \item Real-time error detection and display.
+    \item Form submission disabled until all inputs are valid.
+    \item Immediate visual feedback (green border for valid, red for invalid).
+\end{itemize}
+
+\subsection*{Design}
+The registration form is designed with a centered card layout and clear label-input pairs.  
+Design highlights:
+\begin{itemize}
+    \item A clean, modern interface with white background and subtle shadows.
+    \item Red and green border indicators for validation.
+    \item Error messages positioned directly below each field.
+    \item Submit button dynamically enabled only when all inputs are valid.
+\end{itemize}
+
+\subsection*{Code}
+
+\subsubsection*{HTML (index.html)}
+\lstinputlisting[style=codestyle, language=HTML]{Lab3/index.html}
+
+\subsubsection*{CSS (style.css)}
+\lstinputlisting[style=codestyle, language=CSS]{Lab3/style.css}
+
+\subsubsection*{JavaScript (script.js)}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab3/script.js}
+
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab3/1.png}
+    \caption{Screenshot 1: Initial Page}
+\end{figure}
+
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab3/2.png}
+    \caption{Screenshot 2: Frontend Data Validation}
+\end{figure}
+
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab3/3.png}
+    \caption{Screenshot 3: Validated Inputs}
+\end{figure}
+
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab3/4.png}
+    \caption{Screenshot 4: Popup to Accept Registration}
+\end{figure}
+
+\subsection*{Testing}
+Test cases were designed to verify both functional and boundary behavior:
+
+\begin{itemize}
+    \item \textbf{Empty Fields:} Proper error messages shown for missing input.
+    \item \textbf{Invalid Email:} Input without '@' or domain suffix triggers error.
+    \item \textbf{Invalid Phone:} Less or more than 10 digits rejected.
+    \item \textbf{Age Validation:} Users below 18 cannot submit.
+    \item \textbf{Valid Input:} All validations pass, “Sign Up” button becomes active.
+\end{itemize}
+
+\textbf{Edge Cases:}
+\begin{itemize}
+    \item Input with spaces only in name field.
+    \item Mixed letters in phone number.
+    \item Decimal or negative values in age field.
+\end{itemize}
+
+All invalid entries trigger immediate visual and textual feedback, and submission is blocked until fixed.
+
+\subsection*{Deployment and Version Control}
+\begin{itemize}
+    \item Project maintained in GitHub repository with modular commits for HTML, CSS, JS, and validation logic.
+    \item README file documents validation rules, test scenarios, and setup instructions.
+    \item The form is deployed live using GitHub Pages.
+\end{itemize}
+
+Repository URL:
+\begin{center}
+\href{https://github.com/ashvp/event-registration-form}{\texttt{https://github.com/ashvp/event-registration-form}}
+\end{center}
+
+\subsection*{Result}
+A responsive, interactive registration form was successfully developed and validated using HTML, CSS, and JavaScript.  
+All validations, error handling, and edge cases were implemented as per requirements.  
+The UI offers a seamless and intuitive experience, preventing invalid submissions and ensuring clean data entry for event signups.

@@ -1,0 +1,1 @@
+Error: ENOENT: no such file or directory, open 'D:\SNU\Semester 5\Web Technologies\Lab10\Lab10\components\abot.html'

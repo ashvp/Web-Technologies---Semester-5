@@ -1,0 +1,98 @@
+\section*{Lab Exercise 2: Weather Dashboard using HTML, CSS, and JavaScript}
+
+\subsection*{Question}
+Develop a weather dashboard that fetches and displays current weather data for a city using a free public API.
+
+\textbf{Requirements:}
+\begin{itemize}
+    \item Define the essential data points to display (e.g., temperature, city name, weather icon, humidity, wind speed, etc.).
+    \item Design a weather card UI to present the information.
+    \item Use HTML for structure, CSS for styling, and JavaScript Fetch API (with \texttt{async/await}) for handling API requests and updating the DOM.
+    \item Implement proper error handling for invalid city names.
+    \item Host the project on GitHub with a clear README.
+\end{itemize}
+
+\subsection*{Requirement Analysis}
+Essential data to display:
+\begin{itemize}
+    \item City name
+    \item Temperature (°C)
+    \item Weather condition and icon
+    \item Humidity (\%)
+    \item Wind speed (m/s)
+\end{itemize}
+
+External API used:
+\begin{itemize}
+    \item OpenWeatherMap API (\url{https://openweathermap.org/api})
+    \item Free-tier key integrated via the Fetch API
+\end{itemize}
+
+\subsection*{Design}
+A minimalist card-style UI is designed to display real-time weather information.  
+The core layout includes:
+\begin{itemize}
+    \item A header and footer with neutral tones
+    \item A centered search bar for entering the city name
+    \item A card that dynamically shows weather data fetched via JavaScript
+    \item Color-coded error message display
+\end{itemize}
+
+A design sketch (in Figma) illustrates modular separation between input, display, and data logic layers.
+
+\subsection*{Code}
+
+\subsubsection*{HTML (index.html)}
+\lstinputlisting[style=codestyle, language=HTML]{Lab2/index.html}
+
+\subsubsection*{CSS (style.css)}
+\lstinputlisting[style=codestyle, language=CSS]{Lab2/style.css}
+
+\subsubsection*{JavaScript (script.js)}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab2/script.js}
+
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab2/1.png}
+    \caption{Screenshot 1: Initial Page}
+\end{figure}
+
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab2/2.png}
+    \caption{Screenshot 2: Weather for Chennai}
+\end{figure}
+
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab2/3.png}
+    \caption{Screenshot 3: Error Handling}
+\end{figure}
+
+\subsection*{Testing}
+The application was tested for:
+\begin{itemize}
+    \item \textbf{Valid Input:} Correctly displays weather for cities like \texttt{Chennai}, \texttt{Delhi}, \texttt{London}.
+    \item \textbf{Invalid Input:} Displays clear error message when city not found.
+    \item \textbf{Network Failure:} Graceful error handling with message.
+    \item \textbf{Edge Case:} Tested empty input and special characters.
+\end{itemize}
+
+All test cases passed as expected.
+
+\subsection*{Deployment and Version Control}
+The project was version-controlled with Git and pushed to GitHub.  
+Each commit represents one functional milestone: UI design, API integration, error handling, and deployment.
+
+Repository URL:  
+\begin{center}
+\href{https://github.com/ashvp/weather-dashboard}{\texttt{https://github.com/ashvp/weather-dashboard}}
+\end{center}
+
+\subsection*{Result}
+A fully functional weather dashboard web application was developed using HTML, CSS, and JavaScript.  
+It successfully fetches and displays weather data for any valid city using OpenWeatherMap’s public API, and handles all error scenarios gracefully.  
+The UI is responsive, accessible, and visually consistent across browsers.

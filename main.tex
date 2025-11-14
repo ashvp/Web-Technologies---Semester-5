@@ -1,0 +1,96 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta}
+\usepackage{float}
+\usepackage{caption}
+
+\usepackage[utf8]{inputenc}
+
+% Define code style
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usepackage{xcolor}
+
+% Define CSS language for listings
+\lstdefinelanguage{CSS}{
+  keywords={color, background, border, margin, padding, font, font-size, font-family, width, height, display, position, top, left, right, bottom, float, clear, overflow, visibility, content, align-items, justify-content, flex, grid, gap, row, column, auto, min, max, inherit, initial, unset, none, block, inline, inline-block, relative, absolute, fixed, sticky, important, !important},
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]"
+}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, class, const, continue, debugger, default, delete, do, else, export,
+    extends, finally, for, function, if, import, in, instanceof, let, new, return, super, switch,
+    this, throw, try, typeof, var, void, while, with, yield, async, await},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={boolean, null, true, false, undefined, NaN, Infinity, Number, String, Object, Array, Date},
+  ndkeywordstyle=\color{magenta}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=true,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{gray}\ttfamily,
+  stringstyle=\color{orange}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstdefinestyle{codestyle}{
+  backgroundcolor=\color{gray!10},
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{black},
+  tabsize=2,
+  keywordstyle=\color{blue},
+  stringstyle=\color{teal!60!black},
+  commentstyle=\color{gray},
+  morekeywords={div,section,header,footer,h1,h2,ul,li,p,a},
+  morestring=[b]",
+  showstringspaces=false
+}
+
+
+
+
+\title{\textbf{Web Technologies Laboratory Record}}
+\author{Ashwin V \\ B.Tech AI and Data Science \\ Shiv Nadar University}
+\date{}
+
+\begin{document}
+
+% \maketitle
+% \tableofcontents
+% \newpage
+
+\input{Lab1/Lab1.tex}
+\newpage
+\input{Lab2/Lab2.tex}
+\newpage
+\input{Lab3/Lab3.tex}
+\newpage
+\input{Lab4/Lab4.tex}
+\newpage
+\input{Lab5/Lab5.tex}
+\newpage
+\input{Lab6/Lab6.tex}
+\newpage
+\input{Lab7/Lab7.tex}
+\newpage
+\input{Lab8/Lab8.tex}
+\newpage
+\input{Lab9/Lab9.tex}
+\newpage
+\input{Lab10/Lab10.tex}
+
+\end{document}

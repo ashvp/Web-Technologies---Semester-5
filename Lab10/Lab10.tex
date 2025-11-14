@@ -1,0 +1,125 @@
+\section*{Lab Exercise 10: Node.js HTTP Server with URL Routing and Logging}
+
+\subsection*{Question}
+Create an HTTP server using Node.js. Use the \texttt{url} module to parse the incoming request URL and extract the pathname for routing decisions.
+
+\begin{itemize}
+    \item For pathname \texttt{/}, read and serve the content of \texttt{index.html}. If the file doesn't exist, log an error in a log file but still return a basic “Home Page” message.
+    \item For pathname \texttt{/about}, read and serve the content of \texttt{about.html} similarly, logging an error if the file is missing.
+    \item For any other pathname, return a 404 status with “Page Not Found”.
+    \item Create two simple HTML files — \texttt{index.html} and \texttt{about.html} — with a title and a short paragraph.
+    \item Implement logging of server events and errors into a text file named \texttt{Logs.txt}.
+    \item Test the server locally.
+\end{itemize}
+
+
+
+\subsection*{Design Description}
+This lab focuses on building a simple Node.js server without frameworks, utilizing the \texttt{http}, \texttt{fs}, and \texttt{url} modules to serve HTML pages based on URL routes.  
+The design demonstrates:
+\begin{itemize}
+    \item Manual routing logic for multiple paths.
+    \item Error handling when files are missing.
+    \item Logging of both successful and failed requests.
+\end{itemize}
+
+The program reads static HTML files from the local \texttt{components/} directory and sends them as responses, while also maintaining logs in a text file for traceability.
+
+
+
+\subsection*{Main Files and Their Responsibilities}
+
+\begin{itemize}
+    \item \textbf{server.js} - Entry point that creates the HTTP server, parses URL paths, routes requests, and delegates to route handlers.
+    \item \textbf{routes/home.js} - Handles requests to the root path (\texttt{/}); serves \texttt{home.html}.
+    \item \textbf{routes/about.js} - Handles requests to the \texttt{/about} path; serves \texttt{about.html}.
+    \item \textbf{components/home.html} - HTML file for the home page, containing a title and a paragraph.
+    \item \textbf{components/about.html} - HTML file for the about page, containing a title and a paragraph.
+    \item \textbf{utils/logger.js} - Contains helper functions to log request details and errors to \texttt{Logs.txt}.
+    \item \textbf{Logs.txt} - Log file that records request events, timestamps, and error messages.
+\end{itemize}
+
+
+
+% \subsection*{Component Hierarchy Diagram}
+% \begin{center}
+% \includegraphics[width=0.85\textwidth]{Lab10/images/hierarchy.png}
+% \end{center}
+
+
+
+\subsection*{Rendered Output (Screenshots)}
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab10/1.png}
+    \caption{Screenshot 1: Home Page served successfully.}
+\end{figure}
+
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab10/2.png}
+    \caption{Screenshot 2: About Page Rendered Successfully.}
+\end{figure}
+
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab10/3.png}
+    \caption{Screenshot 3: Custom 404 Page Not Found response for invalid routes.}
+\end{figure}
+
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab10/4.png}
+    \caption{Screenshot 4: Internal Server Error logged when abot.html is missing.}
+\end{figure}
+
+
+
+\subsection*{Code Overview}
+
+\subsubsection*{server.js}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab10/server.js}
+
+\subsubsection*{routes/home.js}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab10/routes/home.js}
+
+\subsubsection*{routes/about.js}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab10/routes/about.js}
+
+\subsubsection*{utils/logger.js}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab10/utils/logger.js}
+
+\subsubsection*{HTML Files}
+\lstinputlisting[style=codestyle, language=HTML]{Lab10/components/home.html}
+\lstinputlisting[style=codestyle, language=HTML]{Lab10/components/about.html}
+
+\subsubsection*{Logs.txt (Sample Output)}
+\lstinputlisting[style=codestyle]{Lab10/Logs.txt}
+
+
+
+\subsection*{Result}
+The HTTP server successfully handles multiple routes:
+\begin{itemize}
+    \item Accessing \texttt{http://localhost:3000/} serves the home page.
+    \item Accessing \texttt{http://localhost:3000/about} serves the about page.
+    \item Accessing any other URL returns a custom 404 response.
+\end{itemize}
+
+If any HTML file is missing, the server logs an appropriate error in \texttt{Logs.txt} while still responding with a fallback message to ensure reliability.
+
+
+
+\subsection*{Conclusion}
+This lab effectively demonstrates:
+\begin{itemize}
+    \item Routing control in Node.js using the \texttt{url} module.
+    \item File reading and serving via the \texttt{fs} module.
+    \item Error handling and event logging through a custom utility.
+\end{itemize}
+
+It provides a foundational understanding of low-level HTTP server mechanics before transitioning to frameworks like Express.js.

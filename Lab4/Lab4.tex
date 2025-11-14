@@ -1,0 +1,186 @@
+\section*{Lab Exercise 4: Customizing React Components with Props}
+
+\subsection*{Question}
+For the given UI designs, perform the following tasks:
+
+\begin{itemize}
+    \item Identify the main React components in the design (parent and child).
+    \item For each component, list the props it would receive.
+    \item Draw a component hierarchy diagram showing the nesting using boxes and arrows.
+    \item Ensure the design uses only functional components and props (no state or events).
+\end{itemize}
+
+Each page represents a separate React implementation (Page 1, Page 2, Page 3) built using functional components and props.
+
+\newpage
+\subsection*{Page 1 - Component Identification and Props}
+
+\subsubsection*{Design Description}
+This page implements a simple React layout demonstrating how a parent component (\texttt{App.jsx}) passes data as props to a reusable child component (\texttt{ListSection.jsx}). All components are functional and stateless.
+
+\subsubsection*{Main Components and Props}
+\begin{itemize}
+    \item \textbf{App.jsx} - Root component. \textit{Props:} None.
+    \item \textbf{ListSection.jsx} - Child component displaying a titled list. \textit{Props:} \texttt{title}, \texttt{items} (array).
+\end{itemize}
+
+\subsubsection*{Component Hierarchy Diagram}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    node distance=2.5cm,
+    every node/.style={
+        draw,
+        rounded corners,
+        align=center,
+        font=\small,
+        fill=gray!10,
+        minimum width=4.5cm,
+        minimum height=1cm
+    },
+    arrow/.style={-{Latex[length=3mm,width=2mm]}, thick},
+    prop/.style={font=\footnotesize, right, fill=white, inner sep=2pt}
+]
+
+\node (app) {App.jsx};
+\node (listsection) [below=of app] {ListSection.jsx};
+
+\draw[arrow] (app) -- node[prop]{title: string\\items: array} (listsection);
+
+\end{tikzpicture}
+\caption{Component Hierarchy — Page 1}
+\end{figure}
+
+\subsubsection*{Rendered Output (screenshot)}
+
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab4/1.png}
+    \caption{Screenshot 1: Page 1}
+\end{figure}
+
+\subsubsection*{Code Overview}
+\lstinputlisting[style=codestyle, language=CSS]{Lab4/Page 1/App.css}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab4/Page 1/App.jsx}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab4/Page 1/components/ListSection.jsx}
+
+\subsubsection*{Result}
+A functional component structure demonstrating one-way prop flow between \texttt{App.jsx} and \texttt{ListSection.jsx} was created successfully.
+
+\newpage
+\subsection*{Page 2 - Nested Components with Props}
+
+\subsubsection*{Design Description}
+This page demonstrates nested functional components where the parent passes structured data to intermediate and leaf components.
+
+\subsubsection*{Main Components and Props}
+\begin{itemize}
+    \item \textbf{App.jsx} - Parent component rendering multiple list sections. \textit{Props:} None.
+    \item \textbf{ListSection.jsx} - Intermediate component managing grouped lists. \textit{Props:} \texttt{title}, \texttt{items}.
+    \item \textbf{ListItems.jsx} - Child component rendering individual entries. \textit{Props:} \texttt{name}, \texttt{price}, \texttt{inStock}.
+\end{itemize}
+
+\subsubsection*{Component Hierarchy Diagram}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    node distance=2.5cm,
+    every node/.style={
+        draw,
+        rounded corners,
+        align=center,
+        font=\small,
+        fill=gray!10,
+        minimum width=4.5cm,
+        minimum height=1cm
+    },
+    arrow/.style={-{Latex[length=3mm,width=2mm]}, thick},
+    prop/.style={font=\footnotesize, right, fill=white, inner sep=2pt}
+]
+
+\node (app) {App.jsx};
+\node (listsection) [below=of app] {ListSection.jsx};
+\node (listitems) [below=of listsection] {ListItems.jsx};
+
+\draw[arrow] (app) -- node[prop]{title: string\\items: array} (listsection);
+\draw[arrow] (listsection) -- node[prop]{name: string\\price: number\\inStock: boolean} (listitems);
+
+\end{tikzpicture}
+\caption{Component Hierarchy — Page 2}
+\end{figure}
+
+\subsubsection*{Rendered Output (screenshot)}
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab4/2.png}
+    \caption{Screenshot 1: Page 2}
+\end{figure}
+
+\subsubsection*{Code Overview}
+\lstinputlisting[style=codestyle, language=CSS]{Lab4/Page 2/App.css}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab4/Page 2/App.jsx}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab4/Page 2/components/ListSections.jsx}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab4/Page 2/components/ListItems.jsx}
+
+\subsubsection*{Result}
+Hierarchical prop passing was verified: intermediate components receive data from the parent and pass relevant pieces to the leaf components.
+
+\newpage
+\subsection*{Page 3 - Reusable List Components with Props}
+
+\subsubsection*{Design Description}
+This page focuses on prop-based customization for reusable components where data consistency is maintained through props across multiple elements.
+
+\subsubsection*{Main Components and Props}
+\begin{itemize}
+    \item \textbf{App.jsx} - Parent wrapper initializing lists and styling. \textit{Props:} None.
+    \item \textbf{ListItems.jsx} - Child functional component displaying a styled list element. \textit{Props:} \texttt{name}, \texttt{sciName}, \texttt{weight}, \texttt{eats}.
+\end{itemize}
+
+\subsubsection*{Component Hierarchy Diagram}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    node distance=2.5cm,
+    every node/.style={
+        draw,
+        rounded corners,
+        align=center,
+        font=\small,
+        fill=gray!10,
+        minimum width=4.5cm,
+        minimum height=1cm
+    },
+    arrow/.style={-{Latex[length=3mm,width=2mm]}, thick},
+    prop/.style={font=\footnotesize, right, fill=white, inner sep=2pt}
+]
+
+\node (app) {App.jsx};
+\node (listitems) [below=of app] {ListItems.jsx};
+
+\draw[arrow] (app) -- node[prop]{name: string\\sciName: string\\weight: string\\eats: string} (listitems);
+
+\end{tikzpicture}
+\caption{Component Hierarchy — Page 3}
+\end{figure}
+
+\subsubsection*{Rendered Output (screenshot)}
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab4/3.png}
+    \caption{Screenshot 1: Page 3}
+\end{figure}
+
+\subsubsection*{Code Overview}
+\lstinputlisting[style=codestyle, language=CSS]{Lab4/Page 3/App.css}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab4/Page 3/App.jsx}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab4/Page 3/components/ListItems.jsx}
+
+\subsubsection*{Result}
+The page verifies reusability and one-directional data flow through props between all components, maintaining functional purity.
+
+\subsection*{Overall Result}
+Across Page 1 to Page 3, React's prop-based architecture was implemented effectively. Each component adheres to functional programming principles, promoting modularity, reusability, and predictable rendering.

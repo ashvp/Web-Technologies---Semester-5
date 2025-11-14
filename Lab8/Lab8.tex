@@ -1,0 +1,143 @@
+\section*{Lab Exercise 8: Blog Dashboard using React Bootstrap}
+
+\subsection*{Question}
+Build a simple React application using React Bootstrap to create a blog dashboard with the following features:
+
+\begin{itemize}
+    \item A responsive \textbf{Navbar} (using React Bootstrap's \texttt{Navbar} component) with links to "Home" and "Posts".
+    \item A grid of 3-4 \textbf{Blog Cards} (using Bootstrap's \texttt{Card}, \texttt{Row}, and \texttt{Col} components).
+    \item Each card displays a post title, a short description, and a \texttt{Read More} button (using \texttt{Button} component).
+    \item Use functional components and props to pass post data from parent to child components.
+    \item Draw a component hierarchy diagram.
+\end{itemize}
+
+
+
+\subsection*{Design Description}
+The application is built using React and React Bootstrap to create a clean, responsive blog dashboard UI.  
+The dashboard includes:
+\begin{itemize}
+    \item A navigation bar at the top.
+    \item A responsive grid layout for blog posts.
+    \item Reusable blog card components that accept post data via props.
+\end{itemize}
+
+All components are built as functional components, with \texttt{props} used for communication between the parent (\texttt{App.jsx}) and child components (\texttt{BlogCard.jsx}).
+
+
+
+\subsection*{Main Components and Props}
+
+\begin{itemize}
+    \item \textbf{App.jsx} - Root component that manages the overall structure and passes post data to the dashboard.
+    \begin{itemize}
+        \item \textit{Props:} None
+        \item \textit{Responsibility:} Acts as parent container, imports all components, and defines post data as an array of objects.
+    \end{itemize}
+
+    \item \textbf{NavigationBar.jsx} - Displays the responsive navigation bar using React Bootstrap.
+    \begin{itemize}
+        \item \textit{Props:} \texttt{brandName}, \texttt{links} (array of link names or paths)
+        \item \textit{Responsibility:} Provides top navigation with responsive collapse functionality.
+    \end{itemize}
+
+    \item \textbf{Dashboard.jsx} - Renders the grid layout of all blog posts.
+    \begin{itemize}
+        \item \textit{Props:} \texttt{posts} (array containing post title and description)
+        \item \textit{Responsibility:} Uses Bootstrap’s grid system (\texttt{Row} and \texttt{Col}) to layout BlogCard components responsively.
+    \end{itemize}
+
+    \item \textbf{BlogCard.jsx} - A reusable card component displaying each post’s title, description, and “Read More” button.
+    \begin{itemize}
+        \item \textit{Props:} \texttt{title}, \texttt{description}
+        \item \textit{Responsibility:} Displays data in a visually appealing Bootstrap card format.
+    \end{itemize}
+\end{itemize}
+
+
+
+\subsection*{Component Hierarchy Diagram}
+\begin{figure}[H]
+\centering
+% \hspace*{-1cm} % shift if cutting on right
+\begin{tikzpicture}[
+  node distance=1cm and 1.5cm,
+  every node/.style={
+    draw,
+    rounded corners,
+    align=center,
+    font=\footnotesize,
+    fill=gray!10,
+    text width=4cm,
+    minimum height=1.1cm
+  },
+  level distance=1.4cm,
+  edge from parent/.style={draw, thick, -{Latex[length=2mm,width=1.5mm]}},
+  prop/.style={font=\scriptsize, midway, fill=white, inner sep=1pt}
+]
+
+% Root Node
+\node (app) {App.jsx\\\textit{Root component rendering Navbar and Dashboard}};
+
+% Children
+\node (navbar) [below left=of app, xshift=-0.2cm] {NavigationBar.jsx\\\textit{props: none}};
+\node (dashboard) [below right=of app, xshift=0.2cm] {Dashboard.jsx\\\textit{props: \texttt{\{posts\}}}};
+
+% Nested under Dashboard
+\node (blogcard) [below=2cm of dashboard] {BlogCard.jsx\\\textit{props: \texttt{\{title, description, onReadMore\}}}};
+\node (readmore) [below=2cm of blogcard] {ReadMore.jsx\\\textit{props: \texttt{\{children\}}}};
+
+% Arrows
+\draw[-{Latex[length=2mm,width=1.5mm]}, thick] (app) -- node[prop,above left]{renders navbar} (navbar);
+\draw[-{Latex[length=2mm,width=1.5mm]}, thick] (app) -- node[prop,above right]{renders dashboard} (dashboard);
+\draw[-{Latex[length=3mm,width=1.5mm]}, thick] (dashboard) -- node[prop,left]{maps posts to cards} (blogcard);
+\draw[-{Latex[length=3mm,width=1.5mm]}, thick] (blogcard) -- node[prop,left]{wraps extra content} (readmore);
+
+\end{tikzpicture}
+\caption{Component Hierarchy — Lab 8: Blog Dashboard (React + Bootstrap with Prop Flow)}
+\end{figure}
+
+
+
+\subsection*{Rendered Output (Screenshot)}
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab8/1.png}
+    \caption{Screenshot 1: Home Page}
+\end{figure}
+
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab8/2.png}
+    \caption{Screenshot 2: Read More Button Clicked}
+\end{figure}
+
+
+
+\subsection*{Code Overview}
+
+\subsubsection*{App.jsx}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab8/App.jsx}
+
+\subsubsection*{NavigationBar.jsx}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab8/components/NavigationBar.jsx}
+
+\subsubsection*{Dashboard.jsx}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab8/components/Dashboard.jsx}
+
+\subsubsection*{BlogCard.jsx}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab8/components/BlogCard.jsx}
+
+
+
+\subsection*{Result}
+A fully functional, responsive React blog dashboard was successfully created using React Bootstrap.  
+The Navbar and Cards adapt automatically to screen sizes, and component-level reusability was achieved through prop-driven data passing.
+
+
+
+\subsection*{Conclusion}
+This lab demonstrates practical usage of React Bootstrap components for building responsive, modular UIs.  
+By combining props, grid layouts, and reusable components, the application achieves scalability, maintainability, and professional front-end design.

@@ -1,0 +1,144 @@
+\section*{Lab Exercise 6: Countdown Timer Application using React}
+
+\subsection*{Question}
+Design a UI for a countdown timer web application where users can set the time and start/stop the countdown.
+
+\begin{itemize}
+    \item Identify and define the main React components (\texttt{Title}, \texttt{TimeSetter}, \texttt{TimerDisplay}, \texttt{ControlButtons}).
+    \item List the props required for each component.
+    \item Draw a component hierarchy diagram.
+    \item Use functional components, \texttt{props}, \texttt{useState}, and \texttt{useEffect} for managing timer intervals.
+\end{itemize}
+
+
+
+\subsection*{Design Description}
+This React application provides an interactive countdown timer interface that allows users to:
+\begin{itemize}
+    \item Set a custom countdown duration.
+    \item Start, pause, and reset the timer dynamically.
+    \item View the remaining time in real-time.
+\end{itemize}
+
+The app uses React’s \texttt{useState} for managing timer data and \texttt{useEffect} for interval-based countdown logic.  
+Each component is functional, modular, and communicates through props.
+
+
+
+\subsection*{Main Components and Props}
+
+\begin{itemize}
+    \item \textbf{App.jsx} - The parent component that manages state and interval logic.  
+    \textit{State variables:} \texttt{timeLeft}, \texttt{isRunning}.
+
+    \item \textbf{Title.jsx} - Displays the main title or heading for the application.  
+    \textit{Props:} \texttt{text} (string).
+
+    \item \textbf{TimeSetter.jsx} - Allows the user to input or adjust the countdown duration.  
+    \textit{Props:} \texttt{onTimeChange} (function to update timer duration), \texttt{disabled} (boolean to disable input during active countdown).
+
+    \item \textbf{TimerDisplay.jsx} - Displays the formatted countdown (minutes:seconds).  
+    \textit{Props:} \texttt{timeLeft} (integer representing total seconds).
+
+    \item \textbf{ControlButtons.jsx} - Contains Start, Pause, and Reset buttons to control the countdown timer.  
+    \textit{Props:} \texttt{isRunning} (boolean), \texttt{onStart}, \texttt{onPause}, \texttt{onReset}.
+\end{itemize}
+
+
+
+\subsection*{Component Hierarchy Diagram}
+\begin{figure}[H]
+\centering
+\hspace*{-1cm} % adjust if cutting on the right
+\begin{tikzpicture}[
+    node distance=2cm and 2cm,
+    every node/.style={
+        draw,
+        rounded corners,
+        align=center,
+        font=\footnotesize,
+        fill=gray!10,
+        minimum width=1cm,
+        minimum height=1cm,
+        text width=3.8cm
+    },
+    arrow/.style={-{Latex[length=2.5mm,width=1.5mm]}, thick},
+    prop/.style={font=\scriptsize, midway, fill=white, inner sep=1pt}
+]
+
+%  Parent node 
+\node (app) {App.jsx\\\textit{uses useState/useEffect for timer logic}};
+
+%  Child nodes (fan layout) 
+\node (title) [below left=3cm and 3cm of app] {Title.jsx\\\textit{props: \texttt{\symbol{123}text\symbol{125}}}};
+\node (setter) [below left=6cm and 2cm of app] {TimeSetter.jsx\\\textit{props: \texttt{\symbol{123}hours, minutes, seconds, onTimeChange, disabled\symbol{125}}}};
+\node (controls) [below right=6cm and -3cm of app] {ControlButtons.jsx\\\textit{props: \texttt{\symbol{123}isActive, onStart, onStop, onReset, hasTime\symbol{125}}}};
+\node (display) [below right=3cm and 3cm of app] {TimerDisplay.jsx\\\textit{props: \texttt{\symbol{123}hours, minutes, seconds, isActive, isFinished\symbol{125}}}};
+
+%  Arrows 
+\draw[arrow] (app) -- node[prop,above left, pos=0.5]{passes title text} (title);
+\draw[arrow] (app) -- node[prop,right, pos=0.65]{passes setters + disable state} (setter);
+\draw[arrow] (app) -- node[prop,right, pos=0.45]{passes event handlers} (controls);
+\draw[arrow] (app) -- node[prop,above right, pos=0.55]{passes timer values + flags} (display);
+
+\end{tikzpicture}
+\caption{Component Hierarchy — Lab 6: Countdown Timer (Fan-out Structure with Prop Flow)}
+\end{figure}
+
+
+
+
+
+\subsection*{Rendered Output (Screenshot)}
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab6/1.png}
+    \caption{Screenshot 1: Countdown Timer UI}
+\end{figure}
+
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab6/2.png}
+    \caption{Screenshot 2: Timer Running}
+\end{figure}
+\begin{figure}[H]
+    \captionsetup{labelformat=empty}
+    \centering
+    \includegraphics[width=\textwidth]{Lab6/3.jpg}
+    \caption{Screenshot 3: Timer Finished}
+\end{figure}
+
+\subsection*{Code Overview}
+
+\subsubsection*{App.css}
+\lstinputlisting[style=codestyle, language=CSS]{Lab6/App.css}
+
+\subsubsection*{App.jsx}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab6/App.jsx}
+
+\subsubsection*{Title.jsx}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab6/components/Title.jsx}
+
+\subsubsection*{TimeSetter.jsx}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab6/components/TimeSetter.jsx}
+
+\subsubsection*{TimerDisplay.jsx}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab6/components/TimerDisplay.jsx}
+
+\subsubsection*{ControlButtons.jsx}
+\lstinputlisting[style=codestyle, language=JavaScript]{Lab6/components/ControlButtons.jsx}
+
+
+
+\subsection*{Result}
+The countdown timer web application was successfully designed and implemented using React functional components.  
+The timer logic was managed using \texttt{useState} and \texttt{useEffect} hooks to update the countdown in real-time.  
+The design supports modular component-based architecture with clear prop communication.
+
+
+
+\subsection*{Conclusion}
+This exercise demonstrates effective use of React hooks for managing side effects (intervals) and dynamic state updates.  
+By splitting logic across four functional components, the app achieves a clean, maintainable, and scalable design.
